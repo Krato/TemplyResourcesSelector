@@ -1,13 +1,16 @@
 {
     "name": "infinety-es/temply-resources-selector",
-    "description": "A Laravel Nova card.",
+    "description": "Infinety Temply resources selector card.",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "infinety",
+        "temply"
     ],
     "license": "MIT",
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.1.0",
+        "laravel/nova": "*"
     },
     "autoload": {
         "psr-4": {
