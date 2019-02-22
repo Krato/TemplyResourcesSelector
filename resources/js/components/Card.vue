@@ -76,11 +76,20 @@ export default {
                 .post('/nova-vendor/temply-resources-selector/set-type/' + this.card.type, { value: this.enabled })
                 .then(() => {
                     this.modalConfirm = false;
+                    let text;
                     if (this.enabled) {
-                        this.$toasted.show(this.__('Apartado') + ' ' + titleCase(this.card.type) + ' ' + this.__('activado'), { type: 'success' });
+                        text = this.__('Section') + ' ' + titleCase(this.card.type) + ' ' + this.__('enabled');
                     } else {
-                        this.$toasted.show(this.__('Apartado') + ' ' + titleCase(this.card.type) + ' ' + this.__('desactivado'), { type: 'success' });
+                        text = this.__('Section') + ' ' + titleCase(this.card.type) + ' ' + this.__('disabled');
                     }
+
+                    text += '. ' + this.__('Reloading page in 3 seconds');
+
+                    this.$toasted.show(text, { type: 'success' });
+
+                    setTimeout(() => {
+                        location.reload();
+                    }, 3000);
                 });
         },
 
